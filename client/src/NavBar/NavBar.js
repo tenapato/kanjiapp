@@ -16,6 +16,9 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import useStyles from './styles';
+import {Container, Grow, Grid} from '@material-ui/core';
+
+import Cards from '../components/Kanjis/Kanjis';
 
 /*const App = () => {
     return (
@@ -111,7 +114,9 @@ function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
+    
+      <div className={classes.grow}>
+      
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -174,9 +179,24 @@ function PrimarySearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
+      
+      <Grow in>
+        <Container>
+          <Grid container justify = "space-between" allignItems="center" spacing = {2} >
+              <Grid item xs = {12}>
+              <Cards />
+              </Grid>
+          </Grid>
+        </Container>
+      </Grow>
+
+      
       {renderMobileMenu}
       {renderMenu}
+    
+    
     </div>
+    
   );
             }
 
